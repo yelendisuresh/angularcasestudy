@@ -24,13 +24,13 @@ export class Route6Component implements OnInit, AfterViewInit, OnDestroy {
     window.addEventListener('scroll', (e: any) => {
       newValue = window.pageYOffset;
       if (oldValue < newValue) {
-        console.log("down", e.currentTarget.pageYOffset);
+        // console.log("down", e.currentTarget.pageYOffset);
         if (e.currentTarget.pageYOffset > 150 && this.noOfdivs < 60) {
           this.createDynamicDivs(20);
-          console.log(" createDynamicDivs", this.noOfdivs)
+          // console.log(" createDynamicDivs", this.noOfdivs)
         }
       } else if (oldValue > newValue) {
-        console.log("up");
+        // console.log("up");
       }
       oldValue = newValue;
     });
