@@ -2,8 +2,12 @@
     <label for="time">Enter Timer Limit <input id="time" type="text" [(ngModel)]="currentTime" /></label>
     <br />
     <div class="ml30">
-        <button  class="mr10" (click)="onSubmit()">Start/Pause</button>
-        <button  (click)="reset()" type="button">Reset</button>
+        <button class="mr10" (click)="onSubmit()">Start/Pause</button>
+        <button (click)="reset()" type="button">Reset</button>
     </div>
-
 </div>
+<div *ngIf="timestampArray && timestampArray.length > 0" class="verticalscroll">
+    <p *ngFor="let data of timestampArray">
+        <span>{{data}}</span>
+    </p>
+    </div>
