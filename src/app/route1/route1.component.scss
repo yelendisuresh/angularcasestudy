@@ -23,6 +23,24 @@
     width: 15em;
     height: 10em;
   }
+
+  .div4 {
+    text-align: center;
+    position: absolute;
+    left: calc((100% - 13em) / 2);
+    top: calc((100% - 8em) / 2);
+    width: 13em;
+    height: 8em;
+  }
+  
+  .div5 {
+    text-align: center;
+    position: absolute;
+    left: calc((100% - 10em) / 2);
+    top: calc((100% - 5em) / 2);
+    width: 10em;
+    height: 5em;
+  }
   
   .borderColor{
     border: solid 2px black;
@@ -32,7 +50,6 @@
     align-items: center;
     justify-content: center;
   }
-
   
 
   @mixin rotatemixin($degvalue) {
