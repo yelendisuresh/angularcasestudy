@@ -78,32 +78,3 @@
   }
   
 
-  .first-outer-div{
-    margin-top: 50px;
-    background-color: blanchedalmond;
-    display: flex;
-
-}
-
-.fouterdiv div{
-    width: 100%;
-    height: 100%;
-    padding:2%;
-    border: 1px solid black;
-    display: flex;
-}
-
-p{
-    color: red;
-    margin: 0 auto;
-    animation: mymove 2s infinite
-
-}
-
-@keyframes mymove {
-    0%    {transform: rotate(0deg);}
-    25%   {transform: rotate(90deg);}
-    50%   {transform: rotate(180deg);}
-    75%   {transform: rotate(270deg);}
-    100%  {transform: rotate(360deg);}
-  }
