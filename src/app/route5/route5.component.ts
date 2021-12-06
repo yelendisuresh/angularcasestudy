@@ -1,5 +1,5 @@
+import { KeyValue } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Employee } from './model/employee';
 import { EmployeeService } from './service/employee.serive';
 
 @Component({
@@ -9,50 +9,86 @@ import { EmployeeService } from './service/employee.serive';
   providers:[EmployeeService]
 })
 export class Route5Component implements OnInit {
-  employess: Employee[] =[];
-  isAscendingSort = false;
+  userData:  Array<any> = [];
+  originalUserOrder: Array<any> = [];
+  headings: Array<any> = [];
 
-  constructor( private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
-
-    this.employeeService.getEmployees().subscribe((employees:any)=> {
-      this.employess = employees.data;
-    });
+    this.employeeService.getUsers().subscribe((res)=>{
+      this.userData = res.slice();
+      this.originalUserOrder = res.slice();
+      this.headings = Object.keys(this.userData[0]).map(data=>{
+        return {'headingName': data, count: 0}
+      });
+    }, 
+    
+      (err)=>{
+        console.log('Something Went Wrong')
+      })
   }
 
-  sort( key:any){
-    this.isAscendingSort = !this.isAscendingSort;
-    switch (key) {
-      case "age":
-        {
-          this.employess =  this.isAscendingSort ? this.employess.sort((low, high) => low.employee_age - high.employee_age): this.employess.sort((low, high) => high.employee_age - low.employee_age);
-          break;
-        }
+  // custom sort original order
+  orderOriginal  = (a: KeyValue<number,string>, b: KeyValue<number,string>): number => {
+    return 0;
+  }
 
-      case "salary":
-        {
-          this.employess = this.isAscendingSort ?  this.employess.sort((low, high) => high.employee_salary - low.employee_salary) :  this.employess.sort((low, high) => low.employee_salary - high.employee_salary);
-          break;
-        }
+  sortTableData(name: string, index: number){
+    switch(name){
+      case 'Name':
+        if(this.headings[index].count == 0)
+          {
+            this.userData = this.userData.sort((a, b)=> (a.Name) > (b.Name)  ? 1 : -1 )
+            this.headings[index].count += 1
+          }
+        else if(this.headings[index].count == 1)
+          {
+            this.userData = this.userData.sort((a, b)=> (a.Name) < (b.Name)  ? 1 : -1 )
+            this.headings[index].count += 1
 
-      case "name":
+          }
+          else{
+            this.headings[index].count = 0;
+            this.userData = this.originalUserOrder.slice();
+          }
+        
+        break;
+      case 'Section':
+        if(this.headings[index].count == 0)
         {
-          this.employess = this.employess.sort( (low, high)=> {
-            if (low.employee_name < high.employee_name) {
-              return  this.isAscendingSort ?  -1: 1;
-            }
-            else if (low.employee_name > high.employee_name) {
-              return  this.isAscendingSort? 1: -1;
-            }
-            else {
-              return 0;
-            }
-          })
-          break;
+          this.userData = this.userData.sort((a, b)=> (a.Section) > (b.Section)  ? 1 : -1 )
+          this.headings[index].count += 1
         }
+      else if(this.headings[index].count == 1)
+        {
+          this.userData = this.userData.sort((a, b)=> (a.Section) < (b.Section)  ? 1 : -1 )
+          this.headings[index].count += 1
 
-   }
+        }
+        else{
+          this.headings[index].count = 0;
+          this.userData = this.originalUserOrder.slice();
+        }
+        break;
+      default:
+        let key = this.headings[index].headingName
+        if(this.headings[index].count == 0) {
+          this.userData = this.userData.sort((a, b)=> (a[key]) - (b[key])  )
+          this.headings[index].count += 1
+        }
+      else if(this.headings[index].count == 1)
+        {
+          this.userData = this.userData.sort((a, b)=> (b[key]) - (a[key]) )
+          this.headings[index].count += 1
+
+        }
+        else{
+          this.headings[index].count = 0
+          this.userData = this.originalUserOrder.slice();
+        }
+    }
+
   }
 
 }
