@@ -1,0 +1,38 @@
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+  
+  .child {
+    width: calc(25% - 10px);
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Example Only Styles */
+  .child {
+    height: 100px;
+    background: lightblue;
+  }
+
+
+  .flex-2-cols {
+    width: calc(50% - 10px);
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 100px;
+    background: lightblue;
+  }
+  
+  .flex-4-cols {
+    width: calc(25% - 10px);
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 100px;
+    background: lightblue;
+  }
+
+
+  

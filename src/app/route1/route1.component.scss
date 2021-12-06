@@ -1,0 +1,62 @@
+.div1 {
+    text-align: center;
+    position: relative;
+    margin: 1em auto;
+    width: 25em;
+    height: 20em;
+  }
+  
+  .div2 {
+    text-align: center;
+    position: absolute;
+    left: calc((100% - 20em) / 2);
+    top: calc((100% - 15em) / 2);
+    width: 20em;
+    height: 15em;
+  }
+  
+  .div3 {
+    text-align: center;
+    position: absolute;
+    left: calc((100% - 15em) / 2);
+    top: calc((100% - 10em) / 2);
+    width: 15em;
+    height: 10em;
+  }
+  
+  .borderColor{
+    border: solid 2px black;
+  }
+  .innertext{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+
+  @mixin rotatemixin($degvalue) {
+
+    -ms-transform: rotate($degvalue);
+    -moz-transform: rotate($degvalue);
+    -webkit-transform: rotate($degvalue);
+    -o-transform: rotate($degvalue);
+    transform: rotate($degvalue);
+
+  }
+  @keyframes rotating {
+    from {
+    @include rotatemixin((0deg));
+    }
+    to {
+        @include rotatemixin((360deg));
+    }
+  }
+  .rotating {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+  }
+  

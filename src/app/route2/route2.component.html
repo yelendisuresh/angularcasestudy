@@ -1,0 +1,19 @@
+<p>route2 works!</p>
+
+<div style="display: flex; justify-content: flex-end">
+    <button (click)="viewType = true"> List</button>
+    <button (click)="viewType = false"> Grid</button>
+    <select id="sort-by" (change)="sort($event)">
+        <option value="Low">Show Low to High Price</option>
+        <option value="High">Show High to Low Price</option>
+    </select>
+</div>
+
+<div class="parent">
+    <div *ngFor="let product of products"   [ngClass]="{
+        'flex-4-cols': !viewType,
+        'flex-2-cols': viewType}">
+        <div>{{product.price}}</div>
+        <div>{{product.category}}</div>
+    </div>
+  </div>

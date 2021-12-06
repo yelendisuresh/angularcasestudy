@@ -1,0 +1,18 @@
+<p>route5 works!</p>
+
+<table>
+    <thead>
+      <tr>
+        <th  (click)="sort('name')">Employee Name</th>
+        <th (click)="sort('salary')">Employee salary</th>
+        <th (click)="sort('age')">Employee Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor=" let employee of employess">
+        <td >{{employee.employee_name}}</td>
+        <td >{{employee.employee_salary}}</td>
+        <td >{{employee.employee_age}}</td>
+      </tr>
+    </tbody>
+  </table>
