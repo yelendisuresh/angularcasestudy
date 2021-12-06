@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+.container {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 20px;
+	justify-content: space-evenly;
+}
+.mt10 {
+    margin-top:  10px;
+}
+.mr10 {
+  margin-right:10px;
+}
+.item {
+	width: 600px;
+	height: 250px;
+	border: 1px solid black;
+}
+@media (max-width: 1000px) {
+	.container {
+		display: grid;
+		grid-template-columns: auto;
+		grid-gap: 20px;
+		justify-content: space-evenly;
+	}
+	.item {
+		width: 300px;
+		height: 200px;
+		border: 1px solid black;
+	}
+}
+@media (min-width:1000px) and (max-width: 1200px) {
+	.container {
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-gap: 20px;
+		justify-content: space-evenly;
+	}
+	.item {
+		width: 550px;
+		height: 200px;
+		border: 1px solid black;
+	}
+}
