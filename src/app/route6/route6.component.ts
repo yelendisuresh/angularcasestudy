@@ -42,7 +42,7 @@ export class Route6Component implements OnInit, AfterViewInit, OnDestroy {
     for (let i = 1; i <= count; ++i) {
       var div = document.createElement('div');
       div.innerHTML = `<button class="buttonClass" type="button"> ${this.noOfdivs}</button>`;
-      div.style.cssText = `background-color:#8bc34a;border-radius:4px;display: flex;align-items: center;justify-content: center;float:left; height:200px;width:200px;margin-left: 10px;margin-bottom: 10px;`;
+      div.style.cssText = `background-color:#8bc34a;border-radius:4px;display: flex;align-items: center;justify-content: center; height:200px;width:200px;margin-left: 10px;margin-bottom: 10px;`;
       this.noOfdivs++;
       button?.appendChild(div);
     }
