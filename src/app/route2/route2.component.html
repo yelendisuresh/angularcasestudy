@@ -1,7 +1,7 @@
 <div style="display: flex; justify-content: flex-end;margin-bottom: 20px;">
     <button (click)="viewType = true"> List</button>
     <button (click)="viewType = false"> Grid</button>
-    <select id="sort-by" (change)="sort($event)">
+    <select id="sort-by" class="ml10" (change)="sort($event)">
         <option value="Low">Show Low to High Price</option>
         <option value="High">Show High to Low Price</option>
     </select>

@@ -40,6 +40,10 @@
     background: lightblue;
     flex-direction: column;
   }
-
+  @media (max-width: 425px){
+    .flex-2-cols ,.flex-4-cols{
+      width: auto;
+    }
+}
 
   
