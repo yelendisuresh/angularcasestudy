@@ -20,8 +20,6 @@ export class SettimerComponent implements OnInit {
         this.currentTime = data
         console.log(this.currentTime)
         if(this.currentTime <= 0){
-          console.log("Hello", data)  
-
           this.toggle = false;
         }
         

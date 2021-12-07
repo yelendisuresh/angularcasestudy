@@ -17,21 +17,28 @@
     background: lightblue;
   }
 
+  .listitem{
+    display: flex;
+    align-items: center;
+  }
+
 
   .flex-2-cols {
     width: calc(50% - 10px);
     margin-left: 10px;
     margin-top: 10px;
-    height: 100px;
+    height: 200px;
     background: lightblue;
+    flex-direction: column;
   }
   
   .flex-4-cols {
     width: calc(25% - 10px);
     margin-left: 10px;
     margin-top: 10px;
-    height: 100px;
+    height: 200px;
     background: lightblue;
+    flex-direction: column;
   }
 
 

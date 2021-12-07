@@ -1,5 +1,3 @@
-<p>route2 works!</p>
-
 <div style="display: flex; justify-content: flex-end;margin-bottom: 20px;">
     <button (click)="viewType = true"> List</button>
     <button (click)="viewType = false"> Grid</button>
@@ -10,10 +8,11 @@
 </div>
 
 <div class="parent">
-    <div *ngFor="let product of products"   [ngClass]="{
+    <div class="listitem" *ngFor="let product of products"   [ngClass]="{
         'flex-4-cols': !viewType,
         'flex-2-cols': viewType}">
+        <div>{{product.category}}</div><br/>
+        <div><img [src]= "product.image" width ="120" height="120"/></div><br/>
         <div>{{product.price}}</div>
-        <div>{{product.category}}</div>
     </div>
   </div>
