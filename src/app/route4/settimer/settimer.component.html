@@ -1,0 +1,8 @@
+<div class="container mt10">
+    <label for="time">Enter Timer Limit <input id="time" type="text" [(ngModel)]="currentTime" /></label>
+    <br />
+    <div class="ml30">
+        <button class="mr10" (click)="onSubmit()">Start/Pause</button>
+        <button (click)="reset()" type="button">Reset</button>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="verticalscroll">
+    <h2>Time Stamp</h2>
+    <ng-container *ngIf="timeStamp && timeStamp.length > 0">
+    <p *ngFor="let data of timeStamp">
+        <span>{{data.date}}</span>
+        </p>
+    </ng-container>
+</div>

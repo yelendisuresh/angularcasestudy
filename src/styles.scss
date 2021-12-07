@@ -16,6 +16,21 @@
 	height: 250px;
 	border: 1px solid black;
 }
+.ml30 {
+    margin-left: 30%;
+}
+
+.verticalscroll{
+    overflow-y: scroll;
+    max-height: 100px;
+}
+
+.outercontainer{
+    border:  1px solid black;
+    margin-top: 27px;
+    padding: 1%;
+    text-align: center;
+}
 @media (max-width: 1000px) {
 	.container {
 		display: grid;
