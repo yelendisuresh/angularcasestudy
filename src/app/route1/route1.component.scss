@@ -49,6 +49,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
   
 
@@ -78,3 +79,26 @@
   }
   
 
+
+
+  // .parentbox {
+  //   width: 1200px;
+  //   height: 600px;
+  //   // border-style: solid;
+  //     // background:yellow;
+  
+  //   text-align: center;
+  // }
+  
+  
+  .childbox {
+    // display: inline-block;
+    vertical-align: middle;
+    /* vertical alignment of the inline element */
+    // font: 16px/1 Arial, sans-serif;
+    /* reset the font property */
+  
+    padding: 15px;
+    border: 1px solid black;
+  }
+  
