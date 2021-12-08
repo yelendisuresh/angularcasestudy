@@ -27,7 +27,7 @@ export class Route3Component implements OnInit {
           this.currentTime = 0;
           clearInterval(this.timeInterval)
         }
-      }  , 1000)
+      }, 1000)
     }
     else if (time.reset) {
       this.currentTime = 0;

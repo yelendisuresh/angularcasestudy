@@ -1,13 +1,10 @@
 <div class="outercontainer">
     <div class="container">
         <app-timer [currentTime]="currentTime" class="item"></app-timer>
-         <app-settimer
-                [currentTime]="currentTime" 
-                (timeDuration)="getTimeDuration($event)"
-                (clickDetails)="getclickDetails($event)"
-                class="item">
+        <app-settimer [currentTime]="currentTime" (timeDuration)="getTimeDuration($event)"
+            (clickDetails)="getclickDetails($event)" class="item">
         </app-settimer>
-         <app-timsestamps [timeStamp]="timeStamp" ></app-timsestamps>
+        <app-timsestamps [timeStamp]="timeStamp"></app-timsestamps>
         <app-logs [clickData]="clickData"></app-logs>
     </div>
 

@@ -12,7 +12,7 @@ export class TimestampComponent implements OnInit {
   constructor(private timerService: TimerService) { }
 
   ngOnInit(): void {
-    this.timerService.clicks.subscribe((clickData)=>{
+    this.timerService.clicks.subscribe((clickData) => {
       this.timeStamp.push(clickData);
     })
   }

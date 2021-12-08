@@ -17,7 +17,6 @@ export class TimerService {
   emitClicks(clickData: any): void {
     this.clicks.next(clickData);
   }
-
   emitTimeDuration(timeDurationData: any): void {
     this.timeDuration.next(timeDurationData);
   }
